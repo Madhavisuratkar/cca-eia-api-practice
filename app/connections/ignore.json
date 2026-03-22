@@ -1,0 +1,5 @@
+{
+    "ignored_users": [],
+    "ignored_organizations": ["gmail", "yopmail", "unknown", "ETL-USER", null, "Marketplace"],
+    "ignored_endpoints": ["instance-sizes","cloud-instances", "get-portfolio", "get-portfolio","cloud-accounts/get_account","cloud-accounts", "cloud-accounts/test_account", "organizations", "savings", "features/count", "metrics"]
+}

@@ -1,0 +1,8 @@
+# Need to install openmpi
+# Use run.sh to run the application
+# This is a very simple script adjust the number of processes and threads accoriding to 
+## input size 
+## available cpus
+# executable is in bin
+# the user input goes into input folder
+# output goes to output folder
