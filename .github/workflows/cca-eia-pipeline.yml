@@ -1,5 +1,4 @@
-name: CCA API CI-CD
-name: CCA API Pipeline
+name: CCA API CI-CD Pipeline
 
 on:
   workflow_dispatch:
@@ -14,7 +13,7 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v4
 
-    # 2. Setup SSH (IMPORTANT)
+    # 2. Setup SSH
     - name: Setup SSH
       uses: webfactory/ssh-agent@v0.9.0
       with:
@@ -27,7 +26,7 @@ jobs:
           
           echo "Connected to EC2"
 
-          cd /home/ubuntu/cca-eia-fast-api   # 🔥 CHANGE THIS PATH
+          cd /home/ubuntu/cca-eia-fast-api
 
           echo "Pull latest code"
           git pull
@@ -46,21 +45,3 @@ jobs:
           echo "Deployment completed"
 
         EOF
-
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout Code
-      uses: actions/checkout@v4
-
-    - name: Setup Python
-      run: |
-        python3 -m venv venv
-        source venv/bin/activate
-        pip install --upgrade pip
-        pip install -r requirements.txt
-
-    - name: Run Application
-      run: |
-        python run.py || echo "App executed"
